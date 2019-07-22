@@ -1,4 +1,4 @@
 # syntax check
 
-for val in range(5):
+for val in range(7):
     print(val)
