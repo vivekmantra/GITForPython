@@ -10,7 +10,9 @@ import numpy as np
 def fileclean():
     A = str(input("Enter csv filename\n"))
     A = A + '.csv'
-    df = pd.read_csv(A ,encoding = 'unicode_escape')
+    missing_values = ["n/a", "na", "--"]
+    df = pd.read_csv(A ,encoding = 'unicode_escape',na_values = missing_values)
+
     print("Total rows are {} and columns are {}".format(df.shape[0],df.shape[1]))
     duplicateRowsDF = df[df.duplicated()]
     dcount = len(duplicateRowsDF)
